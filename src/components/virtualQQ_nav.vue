@@ -4,10 +4,10 @@
 			<router-view></router-view>
 		</div>
 		<div class="nav">
-			<router-link to='/qq/talk' class="item icon iconfont icon-talk" :class="{'blue':func == 'talk'}">
+			<router-link to='/qq/talkList' class="item icon iconfont icon-talk" :class="{'blue':func == 'talkList'}">
 				<!--<img src="../assets/talkCheck.png" class="item-icon" v-if='talkCheck'/>
 				<img src="../assets/talk.png" class="item-icon" v-else/>-->
-				<p class="item-desc" :class="{'blue':func == 'talk'}">消息</p>
+				<p class="item-desc" :class="{'blue':func == 'talkList'}">消息</p>
 			</router-link>
 			<router-link to='/qq/contacts' class="item icon iconfont icon-contact" :class="{'blue':func == 'contacts'}">
 				<!--<img src="../assets/contactsCcheck.png" class="item-icon" v-if='contactsCheck'/>
@@ -28,6 +28,7 @@
 		width: 450px;
 		height: 750px;
 		margin: auto;
+		overflow: hidden;
 	}
 	.main{
 		width: 100%;
@@ -67,7 +68,7 @@
 				talkCheck: true,
 				activeCheck: false,
 				contactsCheck: false,
-				func: 'talk' // 当前获得焦点的是哪个功能
+				func: 'talkList' // 当前获得焦点的是哪个功能
 			}
 		},
 		beforeRouteUpdate (to, from, next) {
@@ -76,11 +77,11 @@
 		    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
 		    // 可以访问组件实例 `this`
 		    var target = to.path.split('/')[2];
-		    if(to.path.split('/')[2] == 'talk'){
+		    if(to.path.split('/')[2] == 'talkList'){
 		    	this.talkCheck = true;
 		    	this.contactsCheck = false;
 		    	this.activeCheck = false;
-		    	this.func = 'talk';
+		    	this.func = 'talkList';
 		    }
 		    if(to.path.split('/')[2] == 'contacts'){
 		    	this.talkCheck = false;

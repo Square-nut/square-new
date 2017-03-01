@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<main class="container">
 		<div class="user-icon">
 			<img src='../../assets/headicon.png'/>
 		</div>
@@ -20,7 +20,7 @@
 			<input type="button" name="" id="" value="登录" @click='login' class="w100" />
 		</div>
 		<div class="other-wrap"></div>
-	</div>
+	</main>
 </template>
 <script>
 	export default {
@@ -48,7 +48,7 @@
 					this.pwdErr = true;
 					this.pwdErrInfo='请填写密码';
 				}else{
-					this.$router.push('/qq/talk');
+					this.$router.push('/qq/talkList');
 				}
 
 			},

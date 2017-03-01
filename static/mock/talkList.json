@@ -3,7 +3,7 @@
     "data": [
         {
             "date": "1983-09-30 14:35:13",
-            "friendIcon": "../../assets/logo.png",
+            "friendIcon": "/src/assets/logo.png",
             "friendName": "测试内容52",
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },

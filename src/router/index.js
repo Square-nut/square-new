@@ -13,8 +13,8 @@ import VirtualQQ from '@/components/virtualQQ_nav'
 import QQ_login from '@/components/virtualQQ/login';
 import QQ_register from '@/components/virtualQQ/register';
 import QQ_setting from '@/components/virtualQQ/setting'
-import QQ_home from '@/components/virtualQQ/talkList'
-import QQ_talk from '@/components/virtualQQ/talking'
+import QQ_talkList from '@/components/virtualQQ/talkList'
+import QQ_talking from '@/components/virtualQQ/talking'
 import QQ_contacts from '@/components/virtualQQ/contacts'
 import QQ_active from '@/components/virtualQQ/active'
 Vue.use(Router);
@@ -39,20 +39,14 @@ export default new Router({
 			{path:'register',name:'register',component: QQ_register},
 			{path:'qq',name:'qq',component: VirtualQQ,
 				children:[
-					{path:'talk',name:'talk',component: QQ_talk},
+					{path:'talkList',name:'talkList',component: QQ_talkList},
+					{path:'talking',name:'talking',component: QQ_talking},
 					{path:'contacts',name:'contacts',component: QQ_contacts},
 					{path:'active',name:'active',component: QQ_active},
 					{path:'setting',name:'setting',component: QQ_setting}
 				]
 			},
 			{path:'myself',name:'myself',component: Myself}
-//			,
-//			{path:'prescription',name:'contacts',component: PreNav,
-//				children: [
-//					{path:'login',name:'contacts',component: QQ_login},
-//					{path:'register',name:'contacts',component: QQ_register}
-//				]
-//			}
 		]
 	}]
 });
