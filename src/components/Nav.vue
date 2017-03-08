@@ -1,10 +1,44 @@
 <template>
-	<div>
-		<router-link to=''>Home</router-link>
-		<router-link to=''>模拟QQ</router-link>
-		<router-link to=''>自我介绍</router-link>
-		<router-view></router-view>
+	<div class="container">
+		<nav>
+			<router-link to='/home' >Home</router-link>
+			<!--:class='{visited: visited == home}'-->
+			<router-link to='/qq'>QQ</router-link>
+			<router-link to='/myself'>自我介绍</router-link>
+			<router-link to=''>处方管理</router-link>
+		</nav>
+		<div class="wrap">
+			<router-view></router-view>
+		</div>
 	</div>
+	
 </template>
-<script></script>
-<style></style>
+<script>
+	export default {
+		data(){
+			return {
+				visited: 'home'
+			}
+		}
+	}
+</script>
+<style scoped>
+	a{
+		display: inline-block;
+		text-decoration: none;
+		color: #108EE9;
+		padding: .7em 1em;
+		
+	}
+	a:link,a:visited,a:hover,a:active{
+		text-decoration: none;
+		border-bottom: 3px solid #fff;
+	}
+	a:hover{
+		/*color: ;*/
+		border-bottom: 3px solid;
+	}
+	.visited{
+		border-bottom: 3px solid;
+	}
+</style>
