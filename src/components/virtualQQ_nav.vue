@@ -4,11 +4,11 @@
 			<router-view></router-view>
 		</div>
 		<div class="nav">
-			<router-link to='login'>登录</router-link>
-			<router-link to='register'>注册</router-link>
-			<router-link to='talkList'>聊天列表</router-link>
-			<router-link to='contacts'>联系人</router-link>
-			<router-link to='active'>动态</router-link>
+			<router-link to='/qq/login'>登录</router-link>
+			<router-link to='qq/register'>注册</router-link>
+			<router-link to='qq/talkList'>聊天列表</router-link>
+			<router-link to='qq/contacts'>联系人</router-link>
+			<router-link to='qq/active'>动态</router-link>
 		</div>
 	</div>
 </template>

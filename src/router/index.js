@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 
-import Login_main from '@/components/Login-main';
 //import Recharge from '@/components/recharge-main.vue'
 
 import Nav from '@/components/Nav'
