@@ -13,6 +13,8 @@
 	</div>
 </template>
 <style scoped>
-	
+	.main{
+		
+	}
 </style>
 <script></script>
