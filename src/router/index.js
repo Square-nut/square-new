@@ -33,14 +33,14 @@ export default new Router({
 		component: Nav,
 		children: [
 			{path:'home',name:'home',component: Home},
+			{path:'login',name:'login',component: QQ_login},
+			{path:'register',name:'register',component: QQ_register},
 			{path:'qq',name:'qq',component: VirtualQQ,
 				children:[
-					{path:'login',name:'login',component: QQ_login},
-					{path:'register',name:'register',component: QQ_register},
-					{path:'setting',name:'setting',component: QQ_setting},
 					{path:'talk',name:'talk',component: QQ_talk},
 					{path:'contacts',name:'contacts',component: QQ_contacts},
-					{path:'active',name:'active',component: QQ_active}
+					{path:'active',name:'active',component: QQ_active},
+					{path:'setting',name:'setting',component: QQ_setting}
 				]
 			},
 			{path:'myself',name:'myself',component: Myself}

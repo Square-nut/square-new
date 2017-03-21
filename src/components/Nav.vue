@@ -2,8 +2,7 @@
 	<div class="container">
 		<nav>
 			<router-link to='/home' >Home</router-link>
-			<!--:class='{visited: visited == home}'-->
-			<router-link to='/qq'>QQ</router-link>
+			<router-link to='/login'>QQ登录</router-link>
 			<router-link to='/myself'>自我介绍</router-link>
 			<router-link to=''>处方管理</router-link>
 		</nav>
@@ -23,6 +22,9 @@
 	}
 </script>
 <style scoped>
+	.container{
+		/*text-align: center;*/
+	}
 	a{
 		display: inline-block;
 		text-decoration: none;

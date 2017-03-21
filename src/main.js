@@ -13,3 +13,7 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
+
+String.prototype.trim = function(){
+	return this.replace(/(^\s*)|(\s*$)/g,'');
+}
