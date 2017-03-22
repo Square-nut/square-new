@@ -3,7 +3,7 @@
 		<div class="user-icon">
 			<img src='../../assets/headicon.png'/>
 		</div>
-		
+
 		<div class="input-wrap">
 			<input type="text" name="" id="userName" v-model='userName' @focus='inpFocus' :class="{'err-inp':nameErr}" class="w100"/>
 			<p class="err-info" v-show="nameErr">
@@ -36,7 +36,7 @@
 			}
 		},
 		mounted(){
-			
+
 		},
 		methods:{
 			login(){
@@ -50,7 +50,7 @@
 				}else{
 					this.$router.push('/qq/talk');
 				}
-				
+
 			},
 			inpFocus(){
 				this.nameErr = false;
@@ -89,7 +89,6 @@
 		padding: 10px 0;
 		border-radius: 2px;
 		border: 1px solid #6e6e6e;
-		cursor: pointer;
 	}
 	/*.input-wrap input:hover{
 		border-color: #108EE9;

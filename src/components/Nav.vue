@@ -10,7 +10,7 @@
 			<router-view></router-view>
 		</div>
 	</div>
-	
+
 </template>
 <script>
 	export default {
@@ -25,12 +25,15 @@
 	.container{
 		/*text-align: center;*/
 	}
+	.container nav{
+		text-align: center;
+	}
 	a{
 		display: inline-block;
 		text-decoration: none;
 		color: #108EE9;
 		padding: .7em 1em;
-		
+
 	}
 	a:link,a:visited,a:hover,a:active{
 		text-decoration: none;

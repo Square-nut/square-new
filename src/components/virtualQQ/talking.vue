@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<header>
+		<header class="talk-list-header">
 			<a href="javascript:;" class="user-icon">
 				<img src="../../assets/headicon.png"/>
 			</a>
@@ -9,9 +9,7 @@
 				<input type="radio" id="title-telep" name="title"/><label for="title-telep" class="label-telep">电话</label>
 			</div>
 			<div class="add-menu">
-				<div class="add-icon iconfont icon-talk">
-					
-				</div>
+				<i class="add-icon iconfont icon-talk"></i>
 				<ul class="menu-cont">
 					<li v-for="item in menu"><i class="iconfont paR10" :class="item.className"></i>{{ item.name }}</li>
 				</ul>
@@ -45,7 +43,7 @@
 			})
 		},
 		methods:{
-			
+
 		}
 	}
 </script>
@@ -59,14 +57,18 @@
 	.container{
 		position: relative;
 	}
-	.user-icon{
-		position: absolute;
-		left: 0;
-		height: 0;
-		display: block;
-		border-radius: ;
+	.talk-list-header {
+		display: flex;
+		justify-content: space-between;
 	}
-	.title label{
+	.talk-list-header .user-icon{
+		/*position: absolute;
+		left: 0;
+		height: 0;*/
+		/*display: block;*/
+		/*border-radius: ;*/
+	}
+	.talk-list-header .title label{
 		border: 1px solid;
 		color:  #108ee9;
 		padding: .2rem 1rem;
@@ -89,14 +91,20 @@
 		background: #108EE9;
 		color:#ffffff;
 	}
-	.inbl{
-		display: inline-block;
+	.talk-list-header .add-menu,
+	.talk-list-header .title,
+	.talk-list-header .user-icon{
+		flex: 1;
+	}
+	..talk-list-header .add-menu{
+		text-align: right;
 	}
 	.paR10{
 		padding-right: 10px;
 	}
 	.menu-cont{
-		position: absolute;
+		position: relative;
+		display: none;
 		z-index: 2;
 		background: #fff;
 		width: 123px;
@@ -125,5 +133,8 @@
 	}
 	.menu-cont li:first-child{
 		border-top: 0;
+	}
+	.add-icon:hover + .menu-cont{
+		display: block;
 	}
 </style>
