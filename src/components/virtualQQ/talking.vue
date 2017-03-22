@@ -9,11 +9,11 @@
 				<input type="radio" id="title-telep" name="title"/><label for="title-telep" class="label-telep">电话</label>
 			</div>
 			<div class="add-menu">
-				<div class="add-icon icon iconfont icon-talk">
+				<div class="add-icon iconfont icon-talk">
 					
 				</div>
-				<ul>
-					<li v-for=" item in menu">{{ item }}</li>
+				<ul class="menu-cont">
+					<li v-for="item in menu"><i class="iconfont paR10" :class="item.className"></i>{{ item.name }}</li>
 				</ul>
 			</div>
 		</header>
@@ -24,8 +24,28 @@
 	export default {
 		data(){
 			return {
-				menu: []
+				menu: [],
+				talkList:[]
 			}
+		},
+		mounted(){
+//			获取当前聊天列表
+			this.$http.get('static/mock/talkList.json','122333').then(function(res){
+				if(res.code='000000'){
+					this.talkList = res.data;
+				}
+			},function(e){
+				console.log('服务器错误');
+			})
+//			获取右上角MENU list
+			this.$http.get('static/mock/menuList.json').then(function(res){
+				this.menu = res.data.data;
+			},function(e){
+				console.log('服务器错误');
+			})
+		},
+		methods:{
+			
 		}
 	}
 </script>
@@ -71,5 +91,39 @@
 	}
 	.inbl{
 		display: inline-block;
+	}
+	.paR10{
+		padding-right: 10px;
+	}
+	.menu-cont{
+		position: absolute;
+		z-index: 2;
+		background: #fff;
+		width: 123px;
+		border-radius: 5px;
+		/*border: 1px solid #cdcdcd;*/
+	}
+	.menu-cont::before{
+		position: absolute;
+		top: -6px;
+		left: 100px;
+		z-index: 1;
+		background: #fff;
+		display: block;
+		content: '';
+		width: 10px;
+		height: 10px;
+		/*border: 1px solid #cdcdcd;*/
+		transform: rotate(45deg);
+	}
+	.menu-cont li{
+		border-top: 1px solid #cdcdcd;
+		padding:8px;
+	}
+	.menu-cont li:active{
+		background: #cdcdcd;
+	}
+	.menu-cont li:first-child{
+		border-top: 0;
 	}
 </style>

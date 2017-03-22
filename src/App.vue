@@ -22,4 +22,11 @@ export default {
   /*margin-top: 60px;*/
   margin:auto;
 }
+ul,ol{
+	margin: 0;
+	padding: 0;
+}
+ul,ol{
+	list-style: none;
+}
 </style>

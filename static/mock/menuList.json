@@ -1,0 +1,32 @@
+{
+	"data":[
+	    {
+	        "name": "创建群聊",
+	        "className": "icon-create"
+	    },
+	    {
+	        "name": "加好友/群",
+	        "className": "icon-addfriend"
+	    },
+	    {
+	        "name": "扫一扫",
+	        "className": "icon-scan"
+	    },
+	    {
+	        "name": "面对面快传",
+	        "className": "icon-send"
+	    },
+	    {
+	        "name": "付款",
+	        "className": "icon-barcode"
+	    },
+	    {
+	        "name": "拍摄",
+	        "className": "icon-camera"
+	    },
+	    {
+	        "name": "面对面红包",
+	        "className": "icon-redenvelope"
+	    }
+	]
+}

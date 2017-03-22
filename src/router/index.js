@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
+import VueResource from 'vue-resource';
 
 //import Recharge from '@/components/recharge-main.vue'
 
@@ -17,6 +18,7 @@ import QQ_talk from '@/components/virtualQQ/talking'
 import QQ_contacts from '@/components/virtualQQ/contacts'
 import QQ_active from '@/components/virtualQQ/active'
 Vue.use(Router);
+Vue.use(VueResource);
 
 //export default new Router({
 //routes: [
