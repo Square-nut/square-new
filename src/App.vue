@@ -12,7 +12,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: '微软雅黑','Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /*text-align: center;*/
@@ -22,11 +22,14 @@ export default {
   /*margin-top: 60px;*/
   margin:auto;
 }
-ul,ol{
+ul,ol,p{
 	margin: 0;
 	padding: 0;
 }
 ul,ol{
 	list-style: none;
+}
+img{
+	border: 0;
 }
 </style>

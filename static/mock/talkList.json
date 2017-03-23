@@ -5,31 +5,31 @@
             "date": "1983-09-30 14:35:13",
             "friendIcon": "src/assets/logo.png",
             "friendName": "测试内容52",
-            "currTalk": "汉子"
+            "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
             "date": "2004-08-06 11:29:19",
             "friendIcon": "src/assets/logo.png",
             "friendName": "测试内容53",
-            "currTalk": "吃饭"
+            "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
             "date": "2011-08-03 13:52:19",
             "friendIcon": "src/assets/logo.png",
             "friendName": "测试内容54",
-            "currTalk": "上课"
+            "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
             "date": "1979-01-24 18:47:55",
             "friendIcon": "src/assets/logo.png",
             "friendName": "测试内容55",
-            "currTalk": "下班"
+            "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
             "date": "1980-04-14 18:41:01",
             "friendIcon": "src/assets/logo.png",
             "friendName": "测试内容56",
-            "currTalk": "汉子"
+            "currTalk": "The quick brown fox jumps over the lazy dog"
         }
     ]
 }
