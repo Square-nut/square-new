@@ -25,13 +25,15 @@
 			</div>
 			<div class="talk-list-body w100">
 				<div class="talk-list-item w100" v-for='item in talkList'>
-					<img :img="item.friendIcon" class="friendIcon"/>
+					<!--<img :src="item.friendIcon" class="friendIcon"/>-->
+					<img src="../../assets/headicon.png" class="friendIcon"/>
 					<div class="list-item-body w100">
-						<p class="item-body-name w100"> {{ item.friendName }} </p>
-						<p class="item-body-container w100">
+						<p class="item-body-name"> {{ item.friendName }} </p>
+						<p class="item-body-container">
 							{{ item.currTalk }}
 						</p>
 					</div>
+					<i class="lastTalkTime"> {{ item.date }} </i>
 				</div>
 			</div>
 		</div>
@@ -184,18 +186,33 @@
 		border: 0;
 	}
 	.body .talk-list-body .talk-list-item{
+		position: relative;
 		display: flex;
+		height: 60px;
+		padding: 10px;
 	}
 	.body .talk-list-body .talk-list-item .friendIcon{
 		flex: 1.2;
+		height: 100%;
+		border-radius: 50%;
 	}
 	.body .talk-list-body .talk-list-item .list-item-body{
 		flex: 8;
-		padding-left: 10px;
+		margin-left: 10px;
+		overflow: hidden;
+		border-bottom: 1px solid #cdcdcd;
+	}
+	.body .talk-list-body .talk-list-item .list-item-body .item-body-name{
+		line-height: 30px;
 	}
 	.body .talk-list-body .talk-list-item .list-item-body .item-body-container{
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
+		line-height: 30px;
+	}
+	.body .talk-list-body .talk-list-item .lastTalkTime{
+		position: absolute;
+		right: 10px;
 	}
 </style>
