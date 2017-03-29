@@ -1,7 +1,7 @@
 <template>
 	<main class="container">
 		<div class="user-icon">
-			<img src='../../assets/headicon.png'/>
+			<img :src='userIcon'/>
 		</div>
 
 		<div class="input-wrap">
@@ -26,7 +26,7 @@
 	export default {
 		data(){
 			return {
-				userIcon: '../../assets/logo.png',
+				userIcon: '../../../static/img/logo.png',
 				userName: '',
 				userPWD: '',
 				nameErr: false,
@@ -108,7 +108,7 @@
 	.err-info{
 		color: #E33333;
 		padding-left: 16px;
-		background: url(../../assets/Error.png) left center no-repeat;
+		background: url(../../../static/img/Error.png) left center no-repeat;
 	}
 	.err{
 		border-color: #FF4400;

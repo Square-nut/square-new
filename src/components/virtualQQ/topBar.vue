@@ -1,0 +1,178 @@
+<template>
+	<header class="talk-list-header">
+		<section class="user-icon">
+			<!--<a href="javascript:;" class="">-->
+				<img src="../../../static/img/headicon.png"/>
+			<!--</a>-->
+		</section>
+		<section class="title" v-if="disWhat=='talkList'">
+			<input type="radio" id="title-info" checked="checked" name="title"/><label for="title-info" class="label-info">消息</label>
+			<input type="radio" id="title-telep" name="title"/><label for="title-telep" class="label-telep">电话</label>
+		</section>
+		<section class="title" v-else-if="disWhat=='contacts'">
+			<span class="lightBlue">联系人</span>
+		</section>
+		<section class="title" v-else="disWhat=='active'">
+			<span class="lightBlue">动态</span>
+		</section>
+		<section class="add-menu" v-if="disWhat=='talkList'">
+			<i class="add-icon iconfont icon-add">
+				<ul class="menu-cont">
+					<li v-for="item in menu"><i class="iconfont paR10" :class="item.className"></i>{{ item.name }}</li>
+				</ul>
+			</i>
+		</section>
+		<section class="add-menu" v-else-if="disWhat=='contacts'">
+			<a class="lightBlue" href="javascript:;" @click="toAddPage">
+				添加
+			</a>
+		</section>
+		<section class="add-menu" v-else="disWhat=='active'">
+			<a class="lightBlue" href="javascript:;" @click="toMorePage">
+				更多
+			</a>
+		</section>
+	</header>
+</template>
+<script>
+	export default {
+		name: 'topBar',
+		data(){
+			return{
+				menu: [],
+				disWhat: 'talkList' //显示那个功能对应的topbar
+			}
+		},
+		props:['currFunc'],
+		mounted(){
+//			获取右上角MENU list
+			this.$http.get('static/mock/menuList.json').then(function(res){
+				this.menu = res.data.data;
+			},function(e){
+				console.log('服务器错误');
+			})
+		},
+		watch:{
+			currFunc(value,oldValue){
+				this.disWhat = value;
+			}
+		},
+		methods:{
+			toAddPage(){
+				this.$router.push({ path: '/qq/addContacts' });
+			},
+			toMorePage(){
+				this.$router.push({ path: '/qq/moreFunc' });
+			}
+		}
+	}
+</script>
+<style scoped>
+	.talk-list-header {
+		display: flex;
+		justify-content: space-between;
+		/*align-content: center;*/
+		align-items: center;
+		height: 40px;
+	}
+	.talk-list-header .user-icon img{
+		height: 40px;
+		border-radius: 50%;
+		/*display: block;*/
+		/*border-radius: ;*/
+	}
+	.talk-list-header .title{
+		font-size: 0;
+	}
+	.title label{
+		border: 1px solid;
+		color:  #108ee9;
+		padding: .5em 3em;
+		margin: 0;
+		font-size: 12px;
+		background: #fff;
+		cursor: pointer;
+	}
+	/*.title span{
+		font-size: 18px;
+		font-weight: bolder;
+		color: #108ee9;
+	}*/
+	.lightBlue{
+		font-size: 16px;
+		font-weight: bolder;
+		color: #108ee9;
+	}
+	.title input{
+		display: none;
+	}
+	.title .label-info{
+		border-top-left-radius: .2rem;
+		border-bottom-left-radius: .2rem;
+	}
+	.title .label-telep{
+		border-top-right-radius: .2rem;
+		border-bottom-right-radius: .2rem;
+	}
+	.title input:checked + label{
+		border: 1px solid #108ee9;
+		background: #108EE9;
+		color:#ffffff;
+	}
+	.talk-list-header .add-menu,
+	.talk-list-header .title,
+	.talk-list-header .user-icon{
+		/*flex: 1;*/
+	}
+	..talk-list-header .add-menu{
+		/*text-align: right;*/
+	}
+	.paR10{
+		padding-right: 10px;
+	}
+	.menu-cont{
+		position: absolute;
+		top: 0;
+		right: -3px;
+		display: none;
+		z-index: 5;
+		background: #fff;
+		width: 123px;
+		border-radius: 5px;
+		/*border: 1px solid #cdcdcd;*/
+	}
+	.menu-cont::before{
+		position: absolute;
+		top: -6px;
+		left: 100px;
+		z-index: 1;
+		/*display: block;*/
+		content: '';
+		/*width: 10px;
+		height: 10px;*/
+		border: 10px solid red;
+		border-top: 0;
+		border-left: transparent;
+		border-right: transparent;
+		/*transform: rotate(45deg);*/
+	}
+	.menu-cont li{
+		border-top: 1px solid #a9a9a9;
+		color: #a9a9a9;
+		padding:8px;
+	}
+	.menu-cont li:active{
+		background: #a9a9a9;
+		color: #fff;
+	}
+	.menu-cont li:first-child{
+		border-top: 0;
+	}
+	.add-icon{
+		position: relative;
+		color: #108EE9;
+	}
+	.add-icon:hover .menu-cont{
+		display: block;
+	}
+</style>

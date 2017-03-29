@@ -1,11 +1,11 @@
 <template>
-	<main class="container">
-		<header class="talk-list-header">
-			<section class="user-icon">
+	<div class="container">
+		<!--<header class="talk-list-header">
+			<section class="user-icon">-->
 				<!--<a href="javascript:;" class="">-->
-					<img src="../../assets/headicon.png"/>
+					<!--<img src="../../../static/img/headicon.png"/>-->
 				<!--</a>-->
-			</section>
+			<!--</section>
 			<section class="title">
 				<input type="radio" id="title-info" checked="checked" name="title"/><label for="title-info" class="label-info">消息</label>
 				<input type="radio" id="title-telep" name="title"/><label for="title-telep" class="label-telep">电话</label>
@@ -18,35 +18,35 @@
 				</i>
 				
 			</section>
-		</header>
+		</header>-->
 		<section class="body">
 			<section class="search-panel w100">
 				<input type="text" id="" class="search-bar w90"/>
 			</section>
 			<section class="talk-list-body w100">
 				<div class="talk-list-item w100" v-for='item in talkList'>
-					<!--<img :src="item.friendIcon" class="friendIcon"/>-->
-					<img src="../../assets/logo.png" class="friendIcon"/>
+					<img :src="item.friendIcon" class="friendIcon"/>
 					<div class="list-item-body w100">
 						<p class="item-body-name"> {{ item.friendName }} </p>
-						<p class="item-body-container">
+						<p class="item-body-container" :class="item.newInfo > 0? 'w90' : ''">
 							{{ item.currTalk }}
 						</p>
 					</div>
-					<i class="lastTalkTime"> {{ item.date }} </i>
+					<i class="lastTalkTime"> {{ item.date | filterTime }} </i>
+					<i class="newCounts" v-if="item.newInfo != 0"> {{ item.newInfo | filterCount }} </i>
 				</div>
 			</section>
 		</section>
-	</main>
+	</div>
 </template>
 <script>
 	export default {
 		data(){
 			return {
-				baseUrl:'http://localhost:8089',
 				menu: [],
 				talkList:[],
-				currTime:''
+				currTime:'',
+				calcWidth:false
 			}
 		},
 		mounted(){
@@ -66,9 +66,34 @@
 			})
 		},
 		methods:{
-			getCurrTime(){
-				var currentTime = 
-				return currentTime;
+		},
+		filters:{
+			filterTime(value){
+				let dat = new Date(),
+					sysY = dat.getFullYear(),
+					sysM = dat.getMonth()+1,
+					sysH = dat.getHours()+1,
+					sysD = dat.getDate(),
+					sysm = dat.getMinutes()+1,
+					sysS = dat.getSeconds()+1,
+					dates = value.split(" ")[0],
+					time = value.split(" ")[1];
+				if(sysY > dates.split("-")[0]){
+					return dates;
+				}else if(sysM > dates.split("-")[1] || (sysM == dates.split("-")[1] && (sysD - 7) > dates.split("-")[2])){
+					return dates.split("-")[1]+"-"+dates.split("-")[2];
+				}else if(sysM == dates.split("-")[1] && (sysD > dates.split("-")[2])){
+					return '近期';
+				}else{
+					return time.split(":")[0]+":"+time.split(":")[1];
+				}
+			},
+			filterCount(value){
+				if(value < 100){
+					return value;
+				}else{
+					return '99+';
+				}
 			}
 		}
 	}
@@ -80,21 +105,19 @@
 	.w90{
 		width: 90%;
 	}
-	.container{
-		position: relative;
+	.w80{
+		width: 80%;
 	}
-	.talk-list-header {
+	
+	/*.talk-list-header {
 		display: flex;
 		justify-content: space-between;
-		/*align-content: center;*/
 		align-items: center;
 		height: 40px;
 	}
 	.talk-list-header .user-icon img{
 		height: 40px;
 		border-radius: 50%;
-		/*display: block;*/
-		/*border-radius: ;*/
 	}
 	.talk-list-header .title{
 		font-size: 0;
@@ -127,10 +150,8 @@
 	.talk-list-header .add-menu,
 	.talk-list-header .title,
 	.talk-list-header .user-icon{
-		/*flex: 1;*/
 	}
-	..talk-list-header .add-menu{
-		/*text-align: right;*/
+	.talk-list-header .add-menu{
 	}
 	.paR10{
 		padding-right: 10px;
@@ -144,22 +165,17 @@
 		background: #fff;
 		width: 123px;
 		border-radius: 5px;
-		/*border: 1px solid #cdcdcd;*/
 	}
 	.menu-cont::before{
 		position: absolute;
 		top: -6px;
 		left: 100px;
 		z-index: 1;
-		/*display: block;*/
 		content: '';
-		/*width: 10px;
-		height: 10px;*/
 		border: 10px solid red;
 		border-top: 0;
 		border-left: transparent;
 		border-right: transparent;
-		/*transform: rotate(45deg);*/
 	}
 	.menu-cont li{
 		border-top: 1px solid #a9a9a9;
@@ -179,7 +195,7 @@
 	}
 	.add-icon:hover .menu-cont{
 		display: block;
-	}
+	}*/
 	.body{
 		margin-top: 10px;
 		height: calc(100% - 50px);
@@ -202,7 +218,7 @@
 		border-radius: 50%;
 	}
 	.body .talk-list-body .talk-list-item .list-item-body{
-		flex: 8;
+		flex: 7.5;
 		margin-left: 10px;
 		overflow: hidden;
 		border-bottom: 1px solid #cdcdcd;
@@ -210,17 +226,43 @@
 	.body .talk-list-body .talk-list-item .list-item-body .item-body-name{
 		line-height: 30px;
 		color: #000;
-		font-weight: bolder;
+		/*font-weight: bolder;*/
 	}
 	.body .talk-list-body .talk-list-item .list-item-body .item-body-container{
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		overflow: hidden;
 		line-height: 30px;
-		color: #cacaca;
+		color: #b5b5b5;
 	}
+	/*.body .talk-list-body .talk-list-item .list-item-dynamic{
+		flex: 0.7;
+	}*/
 	.body .talk-list-body .talk-list-item .lastTalkTime{
 		position: absolute;
 		right: 10px;
+		color: #b5b5b5;
 	}
+	.body .talk-list-body .talk-list-item .newCounts{
+		display: block;
+		position: absolute;
+		right: 10px;
+		bottom: 20px;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		color: #fff;
+		background: red;
+		font-size: 10px;
+		text-align: center;
+		line-height: 20px;
+	}
+	
+	/*.body .talk-list-body .talk-list-item .w80{
+		
+		width: 80%;
+	}*/
+	/*.body .talk-list-body .talk-list-item .calcWidth{
+		width: calc(100% - 10%);
+	}*/
 </style>

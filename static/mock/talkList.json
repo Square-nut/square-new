@@ -2,33 +2,45 @@
     "code": "000000",
     "data": [
         {
-            "date": "1983-09-30 14:35:13",
-            "friendIcon": "/src/assets/logo.png",
+            "date": "2017-03-29 08:35:13",
+            "friendIcon": "../../../static/img/logo.png",
             "friendName": "测试内容52",
+            "newInfo": 1,
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
-            "date": "2004-08-06 11:29:19",
-            "friendIcon": "../../assets/logo.png",
+            "date": "2017-03-25 11:29:19",
+            "friendIcon": "../../../static/img/active.png",
             "friendName": "测试内容53",
+            "newInfo": 5,
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
             "date": "2011-08-03 13:52:19",
-            "friendIcon": "../../assets/logo.png",
+            "friendIcon": "../../../static/img/contact.png",
             "friendName": "测试内容54",
+            "newInfo": 10,
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
             "date": "1979-01-24 18:47:55",
-            "friendIcon": "../../assets/logo.png",
+            "friendIcon": "../../../static/img/talk.png",
             "friendName": "测试内容55",
+            "newInfo": 4,
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
             "date": "1980-04-14 18:41:01",
-            "friendIcon": "../../assets/logo.png",
+            "friendIcon": "../../../static/img/general-green.png",
             "friendName": "测试内容56",
+            "newInfo": 0,
+            "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
+        },
+        {
+            "date": "2017-03-14 18:41:01",
+            "friendIcon": "../../../static/img/general-green.png",
+            "friendName": "测试内容56",
+            "newInfo": 102,
             "currTalk": ""
         }
     ]

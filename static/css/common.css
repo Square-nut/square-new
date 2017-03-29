@@ -1,0 +1,17 @@
+ul,ol{
+	list-style: none;
+}
+i{
+	font-style: normal;
+}
+ul,ol,p,div{
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: 0;
+}
+a { text-decoration: none; }
+a:hover {
+	text-decoration: none;
+}
