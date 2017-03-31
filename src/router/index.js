@@ -50,6 +50,7 @@ export default new Router({
 					{path:'moreFunc',name:'moreFunc',component: QQ_moreFunc}
 				]
 			},
+			{path:'pre',name:'myself',component: Myself},
 			{path:'myself',name:'myself',component: Myself}
 		]
 	}]

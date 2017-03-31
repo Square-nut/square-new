@@ -23,7 +23,7 @@
 			<section class="search-panel w100">
 				<input type="text" id="" class="search-bar w90"/>
 			</section>
-			<section class="talk-list-body w100">
+			<section class="talk-list-body w100" @drapover="pointDrapover" @drop="porinDrop">
 				<div class="talk-list-item w100" v-for='item in talkList'>
 					<img :src="item.friendIcon" class="friendIcon"/>
 					<div class="list-item-body w100">
@@ -33,7 +33,7 @@
 						</p>
 					</div>
 					<i class="lastTalkTime"> {{ item.date | filterTime }} </i>
-					<i class="newCounts" v-if="item.newInfo != 0"> {{ item.newInfo | filterCount }} </i>
+					<i class="newCounts" v-if="item.newInfo != 0" draggable="true"> {{ item.newInfo | filterCount }} </i>
 				</div>
 			</section>
 		</section>
@@ -66,6 +66,12 @@
 			})
 		},
 		methods:{
+			pointDrapover(){
+				
+			},
+			porinDrop(){
+				
+			}
 		},
 		filters:{
 			filterTime(value){
