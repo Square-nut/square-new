@@ -1,27 +1,52 @@
 <template>
 	<div class="container">
-		<ul>
-			<li>做一个vue项目的合集</li>
-			<li>记录开发中遇到的坑</li>
-			<li>总结开发经验</li>
-			<li><strong>做一个vue虚拟qq，初步设计不带后台功能，日后有时间可能会加上php或者node的后台</strong></li>
-			<li>我去这界面好丑</li>
-		</ul>
+		<section class="self-info">
+			<!--主页-->
+			<a href="github.com/Square-nut" class="my-site">
+				<img src="../../static/img/headicon.png"/>
+			</a>
+			<!--git-->
+			<a href="github.com/Square-nut" class="my-git">
+				<img src="../../static/img/headicon.png"/>
+			</a>
+			<!--头像-->
+			<img src='../../static/img/headicon.png' class="my-pic"/>
+			个人简介
+			<!--微信或其他什么东西-->
+			<p class="my-desc">
+				<span class="my-name"></span>
+				<span class="my-age"></span>
+				<span class="my-name"></span>
+				<span class="my-name"></span>
+			</p>
+			<!--mail-->
+			<a href="zhenjiaguwen123@gmail.com" class="my-mail">
+				<img src="../../static/img/headicon.png"/>
+			</a>
+			
+		</section>
+		 专业技能 工作经历 项目经验 联系邮箱
 	</div>
-	
-	
 </template>
 <script></script>
 <style scoped>
 	.container{
-		width: 50%;
+		display: flex;
+		width: 100%;
+		height: 100%;
 		margin: auto;
 		text-align: left;
 		background: #42B983;
 		color: #FFFFFF;
 		padding: 50px;
 	}
-	ul{
-		list-style: none;
+	.self-info{
+		display: flex;
+	}
+	.self-info img{
+		flex: 2;
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
 	}
 </style>
