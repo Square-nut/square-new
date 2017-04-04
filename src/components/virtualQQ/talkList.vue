@@ -1,13 +1,13 @@
 <template>
 	<div class="container">
 		<section class="body">
-			<section class="search-panel w100">
+			<section class="search-panel">
 				<input type="text" id="" class="search-bar w90"/>
 			</section>
-			<section class="talk-list-body w100" @drapover="pointDrapover" @drop="porinDrop">
-				<div class="talk-list-item w100" v-for='item in talkList'>
+			<section class="talk-list-body" @drapover="pointDrapover" @drop="porinDrop">
+				<div class="talk-list-item" v-for='item in talkList' @click='toTalkPage(item.id)'>
 					<img :src="item.friendIcon" class="friendIcon"/>
-					<div class="list-item-body w100">
+					<div class="list-item-body">
 						<p class="item-body-name"> {{ item.friendName }} </p>
 						<p class="item-body-container" :class="item.newInfo > 0? 'w90' : ''">
 							{{ item.currTalk }}
@@ -39,12 +39,6 @@
 			},function(e){
 				console.log('服务器错误');
 			})
-//			获取右上角MENU list
-			this.$http.get('static/mock/menuList.json').then(function(res){
-				this.menu = res.data.data;
-			},function(e){
-				console.log('服务器错误');
-			})
 		},
 		methods:{
 			pointDrapover(){
@@ -52,6 +46,11 @@
 			},
 			porinDrop(){
 
+			},
+			toTalkPage(id){
+				console.info("当前Id为：" + id);
+				window.sessionStorage.friendId = id;
+				this.$router.push('/qq/talking');
 			}
 		},
 		filters:{
@@ -86,7 +85,7 @@
 	}
 </script>
 <style scoped>
-	/*.w100{
+	.w100{
 		width: 100%;
 	}
 	.w90{
@@ -94,7 +93,7 @@
 	}
 	.w80{
 		width: 80%;
-	}*/
+	}
 	.body{
 		margin-top: .13rem;
 		height: calc(100% - .66rem);
@@ -156,14 +155,14 @@
 		position: absolute;
 		right: .13rem;
 		bottom: .26rem;
-		width: .26rem;
-		height: .26rem;
+		width: .48rem;
+		height: .48rem;
 		border-radius: 50%;
 		color: #fff;
 		background: red;
-		font-size: 10px;
+		font-size: .213rem;
 		text-align: center;
-		line-height: 20px;
+		line-height: .48rem;
 	}
 
 	/*.body .talk-list-body .talk-list-item .w80{

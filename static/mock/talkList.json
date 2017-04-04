@@ -6,6 +6,7 @@
             "friendIcon": "../../../static/img/logo.png",
             "friendName": "测试内容52",
             "newInfo": 1,
+            "id":"0",
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
@@ -13,6 +14,7 @@
             "friendIcon": "../../../static/img/active.png",
             "friendName": "测试内容53",
             "newInfo": 5,
+            "id":"1",
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
@@ -20,6 +22,7 @@
             "friendIcon": "../../../static/img/contact.png",
             "friendName": "测试内容54",
             "newInfo": 10,
+            "id":"2",
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
@@ -27,6 +30,7 @@
             "friendIcon": "../../../static/img/talk.png",
             "friendName": "测试内容55",
             "newInfo": 4,
+            "id":"3",
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
@@ -34,13 +38,15 @@
             "friendIcon": "../../../static/img/general-green.png",
             "friendName": "测试内容56",
             "newInfo": 0,
+            "id":"4",
             "currTalk": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
         },
         {
             "date": "2017-03-14 18:41:01",
-            "friendIcon": "../../../static/img/general-green.png",
+            "friendIcon": "../../../static/img/chat-icon.png",
             "friendName": "测试内容56",
             "newInfo": 102,
+            "id":"5",
             "currTalk": ""
         }
     ]

@@ -1,10 +1,8 @@
 <template>
 	<div class="container">
-		<topBar :currFunc="func"></topBar>
-		<!--<div class='main'>-->
-			<router-view class="middle"></router-view>
-		<!--</div>-->
-		<div class="nav">
+		<topBar :currFunc="func" ></topBar>
+		<router-view class="middle"></router-view>
+		<footer class="nav">
 			<router-link to='/qq/talkList' class="item icon iconfont icon-talk" :class="{'blue':func == 'talkList'}">
 				<p class="item-desc" :class="{'blue':func == 'talkList'}">消息</p>
 			</router-link>
@@ -15,25 +13,24 @@
 				<p class="item-desc" :class="{'blue':func == 'active'}">动态</p>
 			</router-link>
 			<!--<menus :iconSrc='' :link='xxxx/xxx' :menuName='消息'></menus>-->
-		</div>
+		</footer>
 	</div>
 </template>
 <style scoped>
 	.container{
-		/*width: 450px;
-		height: 750px;*/
 		margin: auto;
 		overflow: hidden;
 	}
 	.middle{
 		width: 100%;
-		/*height: 500px;*/
 		position: relative;
 	}
 	.main{
 		width: 100%;
 	}
 	.nav{
+		position: fixed;
+		bottom: 0;
 		display: flex;
 		justify-content: center;
 		width: 100%;
@@ -45,17 +42,17 @@
 		text-align: center;
 		text-decoration: none;
 		padding-top: 3px;
-
+		font-size: .64rem;
 		color: #7F8293;
+	}
+	.nav .item .item-desc{
+		font-size: .24rem;
 	}
 	.nav .item:hover{
 		color: #108EE9;
 	}
 	.nav .item .item-icon{
 		width: 37.5px;
-	}
-	.nav .item-desc{
-		/*margin: 0;*/
 	}
 	.nav .blue{
 		color: #108EE9;

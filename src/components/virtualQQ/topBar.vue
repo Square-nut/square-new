@@ -2,7 +2,8 @@
 	<header class="talk-list-header">
 		<section class="user-icon">
 			<!--<a href="javascript:;" class="">-->
-				<img src="../../../static/img/headicon.png"/>
+				<img src="../../../static/img/headicon.png" v-show="!isBack"/>
+				<a href="javascript:;" v-show="isBack"><i class="iconfont icon-back"></i> {{ this.$store.state.layoutLeftInfo }} </a>
 			<!--</a>-->
 		</section>
 		<section class="title" v-if="disWhat=='talkList'">
@@ -40,6 +41,7 @@
 		data(){
 			return{
 				menu: [],
+				isBack: false,
 				disWhat: 'talkList' //显示那个功能对应的topbar
 			}
 		},
@@ -99,8 +101,8 @@
 		color: #108ee9;
 	}*/
 	.lightBlue{
-		font-size: 16px;
-		font-weight: bolder;
+		font-size: 56px;
+		/*font-weight: bolder;*/
 		color: #108ee9;
 	}
 	.title input{
@@ -137,14 +139,14 @@
 		display: none;
 		z-index: 5;
 		background: #fff;
-		width: 123px;
+		width: 1.64rem;
 		border-radius: 5px;
 		/*border: 1px solid #cdcdcd;*/
 	}
 	.menu-cont::before{
 		position: absolute;
 		top: -6px;
-		left: 100px;
+		left: 1.33rem;
 		z-index: 1;
 		/*display: block;*/
 		content: '';
@@ -159,7 +161,8 @@
 	.menu-cont li{
 		border-top: 1px solid #a9a9a9;
 		color: #a9a9a9;
-		padding:8px;
+		padding:.11rem;
+		font-size: 24px;
 	}
 	.menu-cont li:active{
 		background: #a9a9a9;

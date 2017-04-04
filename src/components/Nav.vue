@@ -1,8 +1,8 @@
 <template>
 	<div class="container">
 		<nav v-show="isQQ">
-			<router-link to='/home' >Home</router-link>
-			<router-link to='/login'>QQ登录</router-link>
+			<!-- <router-link to='/home' >Home</router-link>
+			<router-link to='/login'>QQ登录</router-link> -->
 			<!--<router-link to='/myself'>自我介绍</router-link>-->
 			<!--<router-link to=''>处方管理</router-link>-->
 		</nav>

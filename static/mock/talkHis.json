@@ -1,0 +1,48 @@
+/*我也不知道聊天记录是什么格式的，编一个吧*/
+{
+    "code": "000000",
+    "data": [
+        {
+            "date": "2017-04-29 08:35:13",
+            "userIcon": "../../../static/img/logo.png",
+            "userName": "张三",
+            "userId": "1",
+            "paragraph": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
+        },
+        {
+            "date": "2017-03-25 11:29:19",
+            "userIcon": "../../../static/img/active.png",
+            "userName": "李四",
+            "userId": "1",
+            "paragraph": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
+        },
+        {
+            "date": "2011-08-03 13:52:19",
+            "userIcon": "../../../static/img/contact.png",
+            "userName": "张三",
+            "userId": "1",
+            "paragraph": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
+        },
+        {
+            "date": "1979-01-24 18:47:55",
+            "userIcon": "../../../static/img/talk.png",
+            "userName": "李四",
+            "userId": "1",
+            "paragraph": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
+        },
+        {
+            "date": "1980-04-14 18:41:01",
+            "userIcon": "../../../static/img/general-green.png",
+            "userName": "张三",
+            "userId": "1",
+            "paragraph": "The quick brown fox jumps over the lazy dog.The quick brown fox jumps over the lazy dog"
+        },
+        {
+            "date": "2017-03-14 18:41:01",
+            "userIcon": "../../../static/img/chat-icon.png",
+            "userName": "张三",
+            "userId": "1",
+            "paragraph": ""
+        }
+    ]
+}

@@ -6,7 +6,13 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state:{
         path: '',
-        subPath: ''
+        subPath: '',
+        friend:{
+            id: '',
+            name: ''
+        },
+        layoutLeftInfo: ''
+
     },
     mutations: {
         funcHome(state){
