@@ -20,14 +20,14 @@
 </template>
 <style scoped>
 	.container{
-		width: 450px;
-		height: 750px;
+		/*width: 450px;
+		height: 750px;*/
 		margin: auto;
 		overflow: hidden;
 	}
 	.middle{
 		width: 100%;
-		height: 500px;
+		/*height: 500px;*/
 		position: relative;
 	}
 	.main{
@@ -37,6 +37,7 @@
 		display: flex;
 		justify-content: center;
 		width: 100%;
+		height: 1.17rem;
 		background: #EBECEE;
 	}
 	.nav .item{
@@ -44,6 +45,7 @@
 		text-align: center;
 		text-decoration: none;
 		padding-top: 3px;
+
 		color: #7F8293;
 	}
 	.nav .item:hover{

@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<nav>
+		<nav v-show="isQQ">
 			<router-link to='/home' >Home</router-link>
 			<router-link to='/login'>QQ登录</router-link>
 			<!--<router-link to='/myself'>自我介绍</router-link>-->
@@ -16,8 +16,20 @@
 	export default {
 		data(){
 			return {
-				visited: 'home'
+				visited: 'home',
+				isQQ: true
 			}
+		},
+		beforeRouteUpdate (to, from, next) {
+		var target = to.path.split('/')[1];
+		console.info(target);
+			if(target == 'login'){
+				// this.$store.commit('funcQQ');
+				// console.log(this.$store);
+			}else{
+				// this.$store.commit('funcHome');
+			}
+			next(true);
 		}
 	}
 </script>

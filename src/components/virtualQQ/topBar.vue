@@ -73,10 +73,10 @@
 		justify-content: space-between;
 		/*align-content: center;*/
 		align-items: center;
-		height: 40px;
+		height: 1.28rem;
 	}
 	.talk-list-header .user-icon img{
-		height: 40px;
+		height: .91rem;
 		border-radius: 50%;
 		/*display: block;*/
 		/*border-radius: ;*/
@@ -87,9 +87,9 @@
 	.title label{
 		border: 1px solid;
 		color:  #108ee9;
-		padding: .5em 3em;
+		padding: .16em .45rem;
 		margin: 0;
-		font-size: 12px;
+		font-size: .37rem;
 		background: #fff;
 		cursor: pointer;
 	}
@@ -107,12 +107,12 @@
 		display: none;
 	}
 	.title .label-info{
-		border-top-left-radius: .2rem;
-		border-bottom-left-radius: .2rem;
+		border-top-left-radius: .13rem;
+		border-bottom-left-radius: .13rem;
 	}
 	.title .label-telep{
-		border-top-right-radius: .2rem;
-		border-bottom-right-radius: .2rem;
+		border-top-right-radius: .13rem;
+		border-bottom-right-radius: .13rem;
 	}
 	.title input:checked + label{
 		border: 1px solid #108ee9;
@@ -171,6 +171,7 @@
 	.add-icon{
 		position: relative;
 		color: #108EE9;
+		font-size: .48rem;
 	}
 	.add-icon:hover .menu-cont{
 		display: block;
