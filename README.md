@@ -3,6 +3,8 @@
 ## 怀揣梦想
 #### 包含3个项目
 ### iPhone端的手Q --当前项目
+> 参考了[用VUEJS做一个网易云音乐](https://segmentfault.com/a/1190000008370588?utm_source=tuicool&utm_medium=referral)
+
 ## 技术栈  vue + vue-cli + vue-router + vue-resource + RAP + ES2015 + webpack
 > 还未建立后台，与后台通讯暂时使用本地json文件，等有时间把json文件改成mock的方式，等再有时间把mock换成node或php或c#的后台
 

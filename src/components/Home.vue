@@ -11,7 +11,6 @@
 			</a>
 			<!--头像-->
 			<img src='../../static/img/headicon.png' class="my-pic"/>
-			个人简介
 			<!--微信或其他什么东西-->
 			<p class="my-desc">
 				<span class="my-name"></span>
@@ -23,7 +22,6 @@
 			<a href="zhenjiaguwen123@gmail.com" class="my-mail">
 				<img src="../../static/img/headicon.png"/>
 			</a>
-			
 		</section>
 		 专业技能 工作经历 项目经验 联系邮箱
 	</div>
