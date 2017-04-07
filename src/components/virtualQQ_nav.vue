@@ -22,11 +22,15 @@
 		overflow: hidden;
 	}
 	.middle{
-		width: 100%;
+		/*width: 100%;*/
 		position: relative;
+		margin: 0 .13rem;
+	}
+	.main-header{
+		margin: 0 .13rem;
 	}
 	.main{
-		width: 100%;
+		/*width: 100%;*/
 	}
 	.nav{
 		position: fixed;

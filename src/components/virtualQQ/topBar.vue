@@ -1,5 +1,5 @@
 <template>
-	<header class="talk-list-header">
+	<header class="main-header">
 		<section class="user-icon">
 			<!--<a href="javascript:;" class="">-->
 				<img src="../../../static/img/headicon.png" v-show="!isBack"/>
@@ -70,20 +70,20 @@
 	}
 </script>
 <style scoped>
-	.talk-list-header {
+	.main-header {
 		display: flex;
 		justify-content: space-between;
 		/*align-content: center;*/
 		align-items: center;
 		height: 1.28rem;
 	}
-	.talk-list-header .user-icon img{
+	.main-header .user-icon img{
 		height: .91rem;
 		border-radius: 50%;
 		/*display: block;*/
 		/*border-radius: ;*/
 	}
-	.talk-list-header .title{
+	.main-header .title{
 		font-size: 0;
 	}
 	.title label{
@@ -121,12 +121,12 @@
 		background: #108EE9;
 		color:#ffffff;
 	}
-	.talk-list-header .add-menu,
-	.talk-list-header .title,
-	.talk-list-header .user-icon{
+	.main-header .add-menu,
+	.main-header .title,
+	.main-header .user-icon{
 		/*flex: 1;*/
 	}
-	..talk-list-header .add-menu{
+	.main-header .add-menu{
 		/*text-align: right;*/
 	}
 	.paR10{

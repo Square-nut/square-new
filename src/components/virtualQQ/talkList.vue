@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="talkList">
 		<section class="body">
 			<section class="search-panel">
 				<input type="text" id="" class="search-bar w90"/>

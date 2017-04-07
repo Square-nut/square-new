@@ -35,7 +35,7 @@
         },
         {
             "date": "1980-04-14 18:41:01",
-            "friendIcon": "../../../static/img/general-green.png",
+            "friendIcon": "../../../static/img/contactsCcheck.png",
             "friendName": "测试内容56",
             "newInfo": 0,
             "id":"4",
@@ -43,7 +43,7 @@
         },
         {
             "date": "2017-03-14 18:41:01",
-            "friendIcon": "../../../static/img/chat-icon.png",
+            "friendIcon": "../../../static/img/popupClose.png",
             "friendName": "测试内容56",
             "newInfo": 102,
             "id":"5",
