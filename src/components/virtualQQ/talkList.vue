@@ -103,7 +103,6 @@
 		padding-bottom: .2rem;
 	}
 	.body .search-panel .search-bar{
-		/*width*/
 		margin: auto;
 		border-radius: 5px;
 		border: 0;
@@ -134,7 +133,6 @@
 	.body .talk-list-body .talk-list-item .list-item-body .item-body-name{
 		line-height: .626rem;
 		color: #000;
-		/*font-weight: bolder;*/
 	}
 	.body .talk-list-body .talk-list-item .list-item-body .item-body-container{
 		white-space: nowrap;
@@ -143,9 +141,6 @@
 		line-height: .626rem;
 		color: #b5b5b5;
 	}
-	/*.body .talk-list-body .talk-list-item .list-item-dynamic{
-		flex: 0.7;
-	}*/
 	.body .talk-list-body .talk-list-item .lastTalkTime{
 		position: absolute;
 		right: .13rem;
@@ -166,11 +161,4 @@
 		line-height: .48rem;
 	}
 
-	/*.body .talk-list-body .talk-list-item .w80{
-
-		width: 80%;
-	}*/
-	/*.body .talk-list-body .talk-list-item .calcWidth{
-		width: calc(100% - 10%);
-	}*/
 </style>
