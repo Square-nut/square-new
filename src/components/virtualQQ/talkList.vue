@@ -2,7 +2,7 @@
 	<div class="talkList">
 		<section class="body">
 			<section class="search-panel">
-				<input type="text" id="" class="search-bar w90"/>
+				<input type="text" id="" class="search-bar w100"/>
 			</section>
 			<section class="talk-list-body" @drapover="pointDrapover" @drop="porinDrop">
 				<div class="talk-list-item" v-for='item in talkList' @click='toTalkPage(item.id)'>
@@ -107,6 +107,7 @@
 		margin: auto;
 		border-radius: 5px;
 		border: 0;
+		background: #DDDDDD;
 	}
 	.body .talk-list-body{
 		height: 14.186rem;

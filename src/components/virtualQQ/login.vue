@@ -1,5 +1,5 @@
 <template>
-	<main class="container">
+	<div class="container">
 		<div class="user-icon">
 			<img :src='userIcon'/>
 		</div>
@@ -20,7 +20,7 @@
 			<input type="button" name="" id="" value="登录" @click='login' class="w100" />
 		</div>
 		<div class="other-wrap"></div>
-	</main>
+	</div>
 </template>
 <script>
 	export default {
@@ -61,8 +61,8 @@
 </script>
 <style scoped>
 	.container{
-		width: 450px;
-		height: 750px;
+		/*width: 450px;
+		height: 750px;*/
 		margin: auto;
 	}
 	.w100{
@@ -77,16 +77,17 @@
 		margin: auto;
 	}
 	.input-wrap{
-		height: 58px;
+		height: .773rem;
 		position: relative;
 		margin: 25px 0;
 	}
 	.user-icon{
-		width: 75px;
+		/*width: 1rem;*/
 		margin: auto;
+		text-align: center;
 	}
 	.input-wrap input{
-		padding: 10px 0;
+		padding: .13rem 0;
 		border-radius: 2px;
 		border: 1px solid #6e6e6e;
 	}
@@ -94,7 +95,7 @@
 		border-color: #108EE9;
 	}*/
 	.button-wrap input{
-		padding: 10px 0;
+		padding: .13rem 0;
 		border-radius: 2px;
 		border: 0;
 		cursor: pointer;
@@ -107,7 +108,7 @@
 	}
 	.err-info{
 		color: #E33333;
-		padding-left: 16px;
+		padding-left: .213rem;
 		background: url(../../../static/img/Error.png) left center no-repeat;
 	}
 	.err{
