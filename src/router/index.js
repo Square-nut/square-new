@@ -3,14 +3,14 @@ import Router from 'vue-router';
 
 //import Recharge from '@/components/recharge-main.vue'
 
-import QQ_nav from '@/components/virtualQQ_nav';
-import QQ_login from '@/components/virtualQQ/login';
-import QQ_register from '@/components/virtualQQ/register';
-import QQ_setting from '@/components/virtualQQ/setting';
-import QQ_talkList from '@/components/virtualQQ/talkList';
-import QQ_talking from '@/components/virtualQQ/talking';
-import QQ_contacts from '@/components/virtualQQ/contacts';
-import QQ_active from '@/components/virtualQQ/active';
+import QQ_nav from '@/views/virtualQQ_nav';
+import QQ_login from '@/views/login';
+import QQ_register from '@/views/register';
+import QQ_setting from '@/views/setting';
+import QQ_talkList from '@/views/talkList';
+import QQ_talking from '@/views/talking';
+import QQ_contacts from '@/views/contacts';
+import QQ_active from '@/views/active';
 import QQ_addContacts from '@/views/addContacts';
 import QQ_moreFunc from '@/views/moreFunc';
 
