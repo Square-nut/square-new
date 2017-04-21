@@ -1,11 +1,11 @@
 <template>
-	<div class="talkList">
+	<div class="chatList">
 		<section class="body">
 			<section class="search-panel">
 				<input type="text" id="" class="search-bar w100"/>
 			</section>
 			<section class="talk-list-body" @drapover="pointDrapover" @drop="porinDrop">
-				<div class="talk-list-item" v-for='item in talkList' @click='toTalkPage(item.id)'>
+				<div class="talk-list-item" v-for='item in chatList' @click='toTalkPage(item.id)'>
 					<img :src="item.friendIcon" class="friendIcon"/>
 					<div class="list-item-body">
 						<p class="item-body-name"> {{ item.friendName }} </p>
@@ -25,16 +25,16 @@
 		data(){
 			return {
 				menu: [],
-				talkList:[],
+				chatList:[],
 				currTime:'',
 				calcWidth:false
 			}
 		},
 		mounted(){
 //			获取当前聊天列表
-			this.$http.get('static/mock/talkList.json','122333').then(function(res){
+			this.$http.get('static/mock/chatList.json','122333').then(function(res){
 				if(res.code='000000'){
-					this.talkList = res.data.data;
+					this.chatList = res.data.data;
 				}
 			},function(e){
 				console.log('服务器错误');
@@ -50,7 +50,9 @@
 			toTalkPage(id){
 				console.info("当前Id为：" + id);
 				window.sessionStorage.friendId = id;
-				this.$router.push('/qq/talking');
+				this.$emit("currFunc","chat");
+//				window.localStorage.currFunc = 'chat'
+				this.$router.push('/qq/chat');
 			}
 		},
 		filters:{

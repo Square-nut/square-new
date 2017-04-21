@@ -26,7 +26,7 @@
 	export default {
 		data(){
 			return {
-				userIcon: '../../../static/img/logo.png',
+				userIcon: '../../static/img/logo.png',
 				userName: '',
 				userPWD: '',
 				nameErr: false,
@@ -48,7 +48,7 @@
 					this.pwdErr = true;
 					this.pwdErrInfo='请填写密码';
 				}else{
-					this.$router.push('/qq/talkList');
+					this.$router.push('/qq/chatList');
 				}
 
 			},
@@ -109,7 +109,7 @@
 	.err-info{
 		color: #E33333;
 		padding-left: .213rem;
-		background: url(../../../static/img/Error.png) left center no-repeat;
+		background: url(../../static/img/Error.png) left center no-repeat;
 	}
 	.err{
 		border-color: #FF4400;

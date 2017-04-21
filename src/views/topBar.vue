@@ -1,37 +1,39 @@
 <template>
 	<header class="main-header">
-		<section class="user-icon">
-			<!--<a href="javascript:;" class="">-->
-				<img src="../../../static/img/headicon.png" v-show="!isBack"/>
-				<a href="javascript:;" v-show="isBack"><i class="iconfont icon-back"></i> {{ this.$store.state.layoutLeftInfo }} </a>
-			<!--</a>-->
+		<section class="func-left">
+			<img src="../../static/img/headicon.png" v-show="!isBack" class="user-icon"/>
+			<a href="javascript:;" v-show="isBack" @click="lastPage" ><i class="iconfont icon-back"></i> {{ this.$store.state.layoutLeftInfo }} </a>
 		</section>
-		<section class="title" v-if="disWhat=='talkList'">
-			<input type="radio" id="title-info" checked="checked" name="title"/><label for="title-info" class="label-info">消息</label>
-			<input type="radio" id="title-telep" name="title"/><label for="title-telep" class="label-telep">电话</label>
+		<section class="func-center">
+			<div class="title" v-if="disWhat=='talkList'">
+				<input type="radio" id="title-info" checked="checked" name="title"/><label for="title-info" class="label-info">消息</label>
+				<input type="radio" id="title-telep" name="title"/><label for="title-telep" class="label-telep">电话</label>
+			</div>
+			<div class="title" v-else-if="disWhat=='contacts'">
+				<span class="lightBlue">联系人</span>
+			</div>
+			<div class="title" v-else="disWhat=='active'">
+				<span class="lightBlue">动态</span>
+			</div>
 		</section>
-		<section class="title" v-else-if="disWhat=='contacts'">
-			<span class="lightBlue">联系人</span>
-		</section>
-		<section class="title" v-else="disWhat=='active'">
-			<span class="lightBlue">动态</span>
-		</section>
-		<section class="add-menu" v-if="disWhat=='talkList'">
-			<i class="add-icon iconfont icon-add">
-				<ul class="menu-cont">
-					<li v-for="item in menu"><i class="iconfont paR10" :class="item.className"></i>{{ item.name }}</li>
-				</ul>
-			</i>
-		</section>
-		<section class="add-menu" v-else-if="disWhat=='contacts'">
-			<a class="lightBlue" href="javascript:;" @click="toAddPage">
-				添加
-			</a>
-		</section>
-		<section class="add-menu" v-else="disWhat=='active'">
-			<a class="lightBlue" href="javascript:;" @click="toMorePage">
-				更多
-			</a>
+		<section class="func-right">
+			<div class="add-menu" v-if="disWhat=='talkList'">
+				<i class="add-icon iconfont icon-add">
+					<ul class="menu-cont">
+						<li v-for="item in menu"><i class="iconfont paR10" :class="item.className"></i>{{ item.name }}</li>
+					</ul>
+				</i>
+			</div>
+			<div class="add-menu" v-else-if="disWhat=='contacts'">
+				<a class="lightBlue" href="javascript:;" @click="toAddPage">
+					添加
+				</a>
+			</div>
+			<div class="add-menu" v-else="disWhat=='active'">
+				<a class="lightBlue" href="javascript:;" @click="toMorePage">
+					更多
+				</a>
+			</div>
 		</section>
 	</header>
 </template>
@@ -45,7 +47,7 @@
 				disWhat: 'talkList' //显示那个功能对应的topbar
 			}
 		},
-		props:['currFunc'],
+		props:['currFunc','isBack'],
 		mounted(){
 //			获取右上角MENU list
 			this.$http.get('static/mock/menuList.json').then(function(res){
@@ -60,6 +62,9 @@
 			}
 		},
 		methods:{
+			lastPage(){
+				window.history.go(-1);
+			},
 			toAddPage(){
 				this.$router.push({ path: '/qq/addContacts' });
 			},
@@ -73,18 +78,21 @@
 	.main-header {
 		display: flex;
 		justify-content: space-between;
-		/*align-content: center;*/
 		align-items: center;
 		height: 1.28rem;
 	}
-	.main-header .user-icon img{
+	.main-header .user-icon {
 		height: .91rem;
 		border-radius: 50%;
-		/*display: block;*/
-		/*border-radius: ;*/
 	}
 	.main-header .title{
 		font-size: 0;
+	}
+	.func-center,.func-left,.func-right{
+		flex: 1;
+	}
+	.func-right{
+		text-align: right;
 	}
 	.title label{
 		border: 1px solid;

@@ -21,7 +21,7 @@
 			this.userId = id;
 //			获取右上角获取聊天记录
 			this.$http.get('static/mock/talkHis.json').then(function(res){
-				// this.talkHis = res.data.data;
+				 this.talkHis = res.data.data;
 			},function(e){
 				console.log('服务器错误');
 			})

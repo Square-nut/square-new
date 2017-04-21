@@ -1,10 +1,10 @@
 <template>
 	<div class="container">
 		<topBar :currFunc="func" ></topBar>
-		<router-view class="middle"></router-view>
+		<router-view class="middle" @currFunc="currFunc"></router-view>
 		<footer class="nav">
-			<router-link to='/qq/talkList' class="item icon iconfont icon-talk" :class="{'blue':func == 'talkList'}">
-				<p class="item-desc" :class="{'blue':func == 'talkList'}">消息</p>
+			<router-link to='/qq/chatList' class="item icon iconfont icon-talk" :class="{'blue':func == 'chatList'}">
+				<p class="item-desc" :class="{'blue':func == 'chatList'}">消息</p>
 			</router-link>
 			<router-link to='/qq/contacts' class="item icon iconfont icon-contact" :class="{'blue':func == 'contacts'}">
 				<p class="item-desc" :class="{'blue':func == 'contacts'}">联系人</p>
@@ -63,7 +63,7 @@
 	}
 </style>
 <script>
-	import topBar from '@/components/virtualQQ/topBar'
+	import topBar from '@/views/topBar'
 	export default {
 		name: 'qq_navigation',
 		data () {
@@ -71,11 +71,16 @@
 				talkCheck: true,
 				activeCheck: false,
 				contactsCheck: false,
-				func: 'talkList' // 当前获得焦点的是哪个功能
+				func: 'chatList' // 当前获得焦点的是哪个功能
 			}
 		},
 		components:{
 			topBar
+		},
+		methods:{
+			currFunc(msg){
+				this.func = msg;
+			}
 		},
 		beforeRouteUpdate (to, from, next) {
 		    // 在当前路由改变，但是该组件被复用时调用
@@ -83,7 +88,7 @@
 		    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
 		    // 可以访问组件实例 `this`
 		    var target = to.path.split('/')[2];
-		    if(target == 'talkList'){
+		    if(target == 'chatList'){
 		    	this.talkCheck = true;
 		    	this.contactsCheck = false;
 		    	this.activeCheck = false;

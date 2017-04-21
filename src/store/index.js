@@ -5,19 +5,15 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state:{
-        path: '',
-        subPath: '',
         friend:{
             id: '',
             name: ''
         },
-        layoutLeftInfo: ''
-
+        layoutLeftInfo: '',
+		isBack: false,
+		
     },
     mutations: {
-        funcHome(state){
-            state.path = 'home';
-        },
         funcQQ(state){
             state.path = 'qq';
         }

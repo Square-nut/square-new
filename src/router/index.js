@@ -3,32 +3,32 @@ import Router from 'vue-router';
 
 //import Recharge from '@/components/recharge-main.vue'
 
-import QQ_nav from '@/views/virtualQQ_nav';
-import QQ_login from '@/views/login';
-import QQ_register from '@/views/register';
-import QQ_setting from '@/views/setting';
-import QQ_talkList from '@/views/talkList';
-import QQ_talking from '@/views/talking';
-import QQ_contacts from '@/views/contacts';
-import QQ_active from '@/views/active';
-import QQ_addContacts from '@/views/addContacts';
-import QQ_moreFunc from '@/views/moreFunc';
+import nav from '@/views/nav';
+import login from '@/views/login';
+import register from '@/views/register';
+import setting from '@/views/setting';
+import chatList from '@/views/chatList';
+import chat from '@/views/chat';
+import contacts from '@/views/contacts';
+import active from '@/views/active';
+import addContacts from '@/views/addContacts';
+import moreFunc from '@/views/moreFunc';
 
 Vue.use(Router);
 
 const router = new Router({
 	routes:[
-		{path:'/',name:'login',component: QQ_login},
-		{path:'/register',name:'register',component: QQ_register},
-		{path:'/qq',name:'qq',component: QQ_nav,
+		{path:'/',name:'login',component: login},
+		{path:'/register',name:'register',component: register},
+		{path:'/qq',name:'qq',component: nav,
 			children:[
-				{path:'talkList',name:'talkList',component: QQ_talkList},
-				{path:'talking',name:'talking',component: QQ_talking},
-				{path:'contacts',name:'contacts',component: QQ_contacts},
-				{path:'active',name:'active',component: QQ_active},
-				{path:'setting',name:'setting',component: QQ_setting},
-				{path:'addContacts',name:'addContacts',component: QQ_addContacts},
-				{path:'moreFunc',name:'moreFunc',component: QQ_moreFunc}
+				{path:'chatList',name:'chatList',component: chatList},
+				{path:'chat',name:'chat',component: chat},
+				{path:'contacts',name:'contacts',component: contacts},
+				{path:'active',name:'active',component: active},
+				{path:'setting',name:'setting',component: setting},
+				{path:'addContacts',name:'addContacts',component: addContacts},
+				{path:'moreFunc',name:'moreFunc',component: moreFunc}
 			]
 		}
 	]
