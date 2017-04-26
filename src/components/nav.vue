@@ -1,36 +1,36 @@
 <template>
 	<div class="container">
-		<topBar :currFunc="func" ></topBar>
+		<topBar :currFunc="func"></topBar>
 		<router-view class="middle"></router-view>
 		<footer class="nav">
-			<router-link to='/qq/chatList' class="item icon iconfont icon-talk" :class="{'blue':func == 'chatList'}">
-				<p class="item-desc" :class="{'blue':func == 'chatList'}">消息</p>
+			<router-link to='/qq/chatList' class="item icon iconfont icon-talk" >
+				<p class="item-desc">消息</p>
 			</router-link>
-			<router-link to='/qq/contacts' class="item icon iconfont icon-contact" :class="{'blue':func == 'contacts'}">
-				<p class="item-desc" :class="{'blue':func == 'contacts'}">联系人</p>
+			<router-link to='/qq/contacts' class="item icon iconfont icon-contact">
+				<p class="item-desc">联系人</p>
 			</router-link>
-			<router-link to='/qq/active' class="item icon iconfont icon-star" :class="{'blue':func == 'active'}">
-				<p class="item-desc" :class="{'blue':func == 'active'}">动态</p>
+			<router-link to='/qq/active' class="item icon iconfont icon-star">
+				<p class="item-desc">动态</p>
 			</router-link>
 			<!--<menus :iconSrc='' :link='xxxx/xxx' :menuName='消息'></menus>-->
 		</footer>
 	</div>
 </template>
-<style scoped>
+<style scoped lang="less">
+	@activeColor: #108EE9;
+	.router-link-active{
+		color: @activeColor;
+	}
 	.container{
 		margin: auto;
 		overflow: hidden;
 	}
 	.middle{
-		/*width: 100%;*/
 		position: relative;
 		margin: 0 .13rem;
 	}
 	.main-header{
 		margin: 0 .13rem;
-	}
-	.main{
-		/*width: 100%;*/
 	}
 	.nav{
 		position: fixed;
@@ -59,7 +59,7 @@
 		width: 37.5px;
 	}
 	.nav .blue{
-		color: #108EE9;
+
 	}
 </style>
 <script>
@@ -71,7 +71,7 @@
 				talkCheck: true,
 				activeCheck: false,
 				contactsCheck: false,
-				func: 'talkList' // 当前获得焦点的是哪个功能
+				func: 'chatList' // 当前获得焦点的是哪个功能
 			}
 		},
 		components:{
@@ -83,24 +83,7 @@
 		    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
 		    // 可以访问组件实例 `this`
 		    var target = to.path.split('/')[2];
-		    if(target == 'chatList'){
-		    	this.talkCheck = true;
-		    	this.contactsCheck = false;
-		    	this.activeCheck = false;
-		    	this.func = target;
-		    }
-		    if(target == 'contacts'){
-		    	this.talkCheck = false;
-		    	this.contactsCheck = true;
-		    	this.activeCheck = false;
-		    	this.func = target;
-		    }
-		    if(target == 'active'){
-		    	this.talkCheck = false;
-		    	this.contactsCheck = false;
-		    	this.activeCheck = true;
-		    	this.func = target;
-		    }
+	    	this.func = target;
 		    next(true);
 	  	}
 	}

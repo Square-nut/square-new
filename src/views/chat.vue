@@ -1,9 +1,8 @@
 <template>
 	<div>
-		待开发
-		<div class="bubble" v-for="item in talkHistory" :class="{right:'item.userId == userId'}">
+		<div class="bubble" v-for="item in talkHistory" :class="{posRight:'item.userId == userId'}">
 			<img :src="item.userIcon" />
-
+			<p>{{ item.paragraph }}</p>
 		</div>
 	</div>
 </template>
@@ -17,12 +16,14 @@
 			}
 		},
 		mounted(){
+			let that = this;
 			let id = window.sessionStorage.friendId;
-			this.userId = id;
+			that.userId = id;
 //			获取右上角获取聊天记录
 			this.$http.get('static/mock/talkHis.json').then(function(res){
-				 this.talkHis = res.data.data;
-			},function(e){
+				 that.talkHistory = res.data.data;
+			}).catch(function(e){
+				console.log(e);
 				console.log('服务器错误');
 			})
 		}
@@ -38,7 +39,7 @@
 	.bubble{
 		text-align: left;
 	}
-	.right{
+	.posRight{
 		text-align: right;
 	}
 </style>

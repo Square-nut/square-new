@@ -9,9 +9,9 @@ const store = new Vuex.Store({
             id: '',
             name: ''
         },
-        layoutLeftInfo: '',
+        layoutLeftInfo: '消息',
 		isBack: false,
-		
+
     },
     mutations: {
         funcQQ(state){

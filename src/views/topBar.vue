@@ -1,11 +1,11 @@
 <template>
 	<header class="main-header">
 		<section class="func-left">
-			<img src="../../static/img/headicon.png" v-show="!isBack" class="user-icon"/>
-			<a href="javascript:;" v-show="isBack" @click="lastPage" ><i class="iconfont icon-back"></i> {{ this.$store.state.layoutLeftInfo }} </a>
+			<img src="../../static/img/headicon.png" v-show="!disBack" class="user-icon"/>
+			<a href="javascript:;" @click="lastPage" v-show="disBack" class="lightBlue" ><i class="iconfont icon-back"></i><i>{{ this.$store.state.layoutLeftInfo }}</i></a>
 		</section>
 		<section class="func-center">
-			<div class="title" v-if="disWhat=='talkList'">
+			<div class="title" v-if="disWhat=='chatList'">
 				<input type="radio" id="title-info" checked="checked" name="title"/><label for="title-info" class="label-info">消息</label>
 				<input type="radio" id="title-telep" name="title"/><label for="title-telep" class="label-telep">电话</label>
 			</div>
@@ -17,7 +17,7 @@
 			</div>
 		</section>
 		<section class="func-right">
-			<div class="add-menu" v-if="disWhat=='talkList'">
+			<div class="add-menu" v-if="disWhat=='chatList'">
 				<i class="add-icon iconfont icon-add">
 					<ul class="menu-cont">
 						<li v-for="item in menu"><i class="iconfont paR10" :class="item.className"></i>{{ item.name }}</li>
@@ -44,10 +44,11 @@
 			return{
 				menu: [],
 				isBack: false,
-				disWhat: 'talkList' //显示那个功能对应的topbar
+				disWhat: 'chatList', //显示那个功能对应的topbar
+				disBack: false
 			}
 		},
-		props:['currFunc','isBack'],
+		props:['currFunc'],
 		mounted(){
 //			获取右上角MENU list
 			this.$http.get('static/mock/menuList.json').then(function(res){
@@ -59,11 +60,21 @@
 		watch:{
 			currFunc(value,oldValue){
 				this.disWhat = value;
+				//是否显示返回按钮
+				if(value == "chat"){
+					this.disBack = "信息";
+				}
+				if(value == "contact"){
+					this.disBack = "返回";
+				}
+				if(value == "qZone"){
+					this.disBack = "动态";
+				}
 			}
 		},
 		methods:{
 			lastPage(){
-				window.history.go(-1);
+				this.$router.push({ path: '/qq/chatList'})
 			},
 			toAddPage(){
 				this.$router.push({ path: '/qq/addContacts' });
@@ -74,7 +85,9 @@
 		}
 	}
 </script>
-<style scoped>
+<style scoped lang="less">
+	//标题字体颜色
+	@fontColor1: #108ee9;
 	.main-header {
 		display: flex;
 		justify-content: space-between;
@@ -90,6 +103,15 @@
 	}
 	.func-center,.func-left,.func-right{
 		flex: 1;
+	}
+	.func-center{
+		text-align: center;
+	}
+	.func-left{
+		font-size: 56px;
+	}
+	.icon-back{
+		font-size: 56px;
 	}
 	.func-right{
 		text-align: right;
@@ -110,8 +132,7 @@
 	}*/
 	.lightBlue{
 		font-size: 56px;
-		/*font-weight: bolder;*/
-		color: #108ee9;
+		color: @fontColor1;
 	}
 	.title input{
 		display: none;
@@ -128,14 +149,6 @@
 		border: 1px solid #108ee9;
 		background: #108EE9;
 		color:#ffffff;
-	}
-	.main-header .add-menu,
-	.main-header .title,
-	.main-header .user-icon{
-		/*flex: 1;*/
-	}
-	.main-header .add-menu{
-		/*text-align: right;*/
 	}
 	.paR10{
 		padding-right: 10px;

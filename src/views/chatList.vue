@@ -108,7 +108,7 @@
 		margin: auto;
 		border-radius: 5px;
 		border: 0;
-		background: #DDDDDD;
+		background: #eeeff3;
 	}
 	.body .talk-list-body{
 		height: 14.186rem;
