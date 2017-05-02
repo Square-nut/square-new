@@ -89,10 +89,17 @@
 	//标题字体颜色
 	@fontColor1: #108ee9;
 	.main-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
+		// width: calc(100% - 0.13rem - 0.13rem);
+		margin: 0 .13rem;
 		height: 1.28rem;
+		// margin: 0 .13rem;
 	}
 	.main-header .user-icon {
 		height: .91rem;
@@ -108,10 +115,10 @@
 		text-align: center;
 	}
 	.func-left{
-		font-size: 56px;
+		font-size: .75rem;
 	}
 	.icon-back{
-		font-size: 56px;
+		font-size: .75rem;
 	}
 	.func-right{
 		text-align: right;

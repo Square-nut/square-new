@@ -98,15 +98,16 @@
 	}
 	.body{
 		margin-top: .13rem;
-		height: calc(100% - .66rem);
+		/*height: calc(100% - .66rem);*/
 	}
 	.body .search-panel{
 		height: .64rem;
 		padding-bottom: .2rem;
 	}
 	.body .search-panel .search-bar{
+		height: .64rem;
 		margin: auto;
-		border-radius: 5px;
+		border-radius: .05rem;
 		border: 0;
 		background: #eeeff3;
 	}

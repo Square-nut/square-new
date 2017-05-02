@@ -3,14 +3,14 @@
 		<topBar :currFunc="func" ></topBar>
 		<router-view class="middle" @currFunc="currFunc"></router-view>
 		<footer class="nav">
-			<router-link to='/qq/chatList' class="item icon iconfont icon-talk" :class="{'blue':func == 'chatList'}">
-				<p class="item-desc" :class="{'blue':func == 'chatList'}">消息</p>
+			<router-link to='/qq/chatList' class="item icon iconfont icon-talk" >
+				<p class="item-desc" >消息</p>
 			</router-link>
-			<router-link to='/qq/contacts' class="item icon iconfont icon-contact" :class="{'blue':func == 'contacts'}">
-				<p class="item-desc" :class="{'blue':func == 'contacts'}">联系人</p>
+			<router-link to='/qq/contacts' class="item icon iconfont icon-contact" >
+				<p class="item-desc" >联系人</p>
 			</router-link>
-			<router-link to='/qq/active' class="item icon iconfont icon-star" :class="{'blue':func == 'active'}">
-				<p class="item-desc" :class="{'blue':func == 'active'}">动态</p>
+			<router-link to='/qq/active' class="item icon iconfont icon-star">
+				<p class="item-desc">动态</p>
 			</router-link>
 			<!--<menus :iconSrc='' :link='xxxx/xxx' :menuName='消息'></menus>-->
 		</footer>
@@ -22,18 +22,17 @@
 		overflow: hidden;
 	}
 	.middle{
-		/*width: 100%;*/
-		position: relative;
-		margin: 0 .13rem;
-	}
-	.main-header{
-		margin: 0 .13rem;
+		height: 100%;
+		padding: 1.28rem .13rem 1.17rem;
+		-webkit-overflow-scrolling: touch;
 	}
 	.main{
 		/*width: 100%;*/
 	}
 	.nav{
 		position: fixed;
+		left: 0;
+		right: 0;
 		bottom: 0;
 		display: flex;
 		justify-content: center;
@@ -52,13 +51,13 @@
 	.nav .item .item-desc{
 		font-size: .24rem;
 	}
-	.nav .item:hover{
+	/*.nav .item:hover{
 		color: #108EE9;
-	}
+	}*/
 	.nav .item .item-icon{
 		width: 37.5px;
 	}
-	.nav .blue{
+	.nav .router-link-active{
 		color: #108EE9;
 	}
 </style>

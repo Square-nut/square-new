@@ -15,12 +15,11 @@ export default {
   font-family: '黑体','Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*text-align: center;*/
   color: #2c3e50;
-  /*width: 800px;
-  height: 800px;*/
-  /*margin-top: 60px;*/
   margin:auto;
+}
+a:link,a:visited,a:hover,a:active{
+    text-decoration: none;
 }
 
 </style>

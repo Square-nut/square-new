@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="bubble" v-for="item in talkHistory" :class="{posRight:'item.userId == userId'}">
+		<div class="bubble" v-for="item in chatList" :class="{posRight:'item.userId == userId'}">
 			<img :src="item.userIcon" />
 			<p>{{ item.paragraph }}</p>
 		</div>
@@ -10,20 +10,20 @@
 	export default {
 		data(){
 			return {
-				a: 'a',
-				talkHistory: [],
+				chatList: [],
 				userId: ''
 			}
 		},
 		mounted(){
 			let that = this;
-			let id = window.sessionStorage.friendId;
+			var id = window.sessionStorage.friendId;
 			that.userId = id;
-//			获取右上角获取聊天记录
+		//			获取当前聊天列表
 			this.$http.get('static/mock/talkHis.json').then(function(res){
-				 that.talkHistory = res.data.data;
-			}).catch(function(e){
-				console.log(e);
+				if(res.data.code=='000000'){
+					this.chatList = res.data.data;
+				}
+			},function(e){
 				console.log('服务器错误');
 			})
 		}
@@ -39,7 +39,10 @@
 	.bubble{
 		text-align: left;
 	}
+	.bubble img{
+		width: 
+	}
 	.posRight{
-		text-align: right;
+		direction: rtl;
 	}
 </style>
