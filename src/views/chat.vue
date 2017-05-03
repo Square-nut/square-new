@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="chat-panel">
 		<div class="bubble" v-for="item in chatList" :class="{posRight:'item.userId == userId'}">
 			<img :src="item.userIcon" />
 			<p>{{ item.paragraph }}</p>
@@ -40,9 +40,12 @@
 		text-align: left;
 	}
 	.bubble img{
-		width: 
+		width:
 	}
 	.posRight{
 		direction: rtl;
+	}
+	.chat-panel{
+		background: #ecedf1;
 	}
 </style>

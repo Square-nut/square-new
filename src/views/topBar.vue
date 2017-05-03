@@ -2,7 +2,7 @@
 	<header class="main-header">
 		<section class="func-left">
 			<img src="../../static/img/headicon.png" v-show="!disBack" class="user-icon"/>
-			<a href="javascript:;" @click="lastPage" v-show="disBack" class="lightBlue" ><i class="iconfont icon-back"></i><i>{{ this.$store.state.layoutLeftInfo }}</i></a>
+			<a href="javascript:;" @click="lastPage" v-show="disBack" class="lightBlue" ><i class="iconfont icon-back"></i><i class="backParam">{{ this.$store.state.layoutLeftInfo }}</i></a>
 		</section>
 		<section class="func-center">
 			<div class="title" v-if="disWhat=='chatList'">
@@ -74,6 +74,7 @@
 		},
 		methods:{
 			lastPage(){
+				this.disBack = false;
 				this.$router.push({ path: '/qq/chatList'})
 			},
 			toAddPage(){
@@ -116,6 +117,9 @@
 	}
 	.func-left{
 		font-size: .75rem;
+	}
+	.func-left .backParam{
+		font-size: .213rem;
 	}
 	.icon-back{
 		font-size: .75rem;

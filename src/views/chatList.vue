@@ -100,6 +100,9 @@
 		margin-top: .13rem;
 		/*height: calc(100% - .66rem);*/
 	}
+	.chatList{
+		padding: 0 .13rem;
+	}
 	.body .search-panel{
 		height: .64rem;
 		padding-bottom: .2rem;

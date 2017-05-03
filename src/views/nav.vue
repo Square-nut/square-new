@@ -1,7 +1,9 @@
 <template>
 	<div class="container">
 		<topBar :currFunc="func" ></topBar>
-		<router-view class="middle" @currFunc="currFunc"></router-view>
+		<section class="middle">
+			<router-view @currFunc="currFunc"></router-view>
+		</section>
 		<footer class="nav">
 			<router-link to='/qq/chatList' class="item icon iconfont icon-talk" >
 				<p class="item-desc" >消息</p>
@@ -23,7 +25,7 @@
 	}
 	.middle{
 		height: 100%;
-		padding: 1.28rem .13rem 1.17rem;
+		padding: 1.28rem 0 1.17rem 0;
 		-webkit-overflow-scrolling: touch;
 	}
 	.main{
