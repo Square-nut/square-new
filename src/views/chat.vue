@@ -1,7 +1,7 @@
 <template>
 	<div class="chat-panel">
 		<div class="bubble" v-for="item in chatList" :class="{posRight:'item.userId == userId'}">
-			<img :src="item.userIcon" />
+			<div class="user-icon"><img :src="item.userIcon" /></div>
 			<p>{{ item.paragraph }}</p>
 		</div>
 	</div>
@@ -11,13 +11,12 @@
 		data(){
 			return {
 				chatList: [],
-				userId: ''
+				loginId: ''
 			}
 		},
 		mounted(){
-			let that = this;
 			var id = window.sessionStorage.friendId;
-			that.userId = id;
+			this.loginId = id;
 		//			获取当前聊天列表
 			this.$http.get('static/mock/talkHis.json').then(function(res){
 				if(res.data.code=='000000'){
@@ -38,6 +37,10 @@
 	}
 	.bubble{
 		text-align: left;
+	}
+	.bubble .user-icon{
+		width: 50px;
+		padding: 8px;
 	}
 	.bubble img{
 		width:

@@ -22,6 +22,7 @@ const store = new Vuex.Store({
         path: state => state.path,
         subPath: state => state.subPath
     }
+
 })
 
 export default store;

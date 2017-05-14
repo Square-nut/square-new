@@ -1,7 +1,7 @@
 <template>
 	<header class="main-header">
 		<section class="func-left">
-			<img src="../../static/img/headicon.png" v-show="!disBack" class="user-icon"/>
+			<img src="../../static/img/headicon.png" v-show="!disBack" class="user-icon" slot="left"/>
 			<a href="javascript:;" @click="lastPage" v-show="disBack" class="lightBlue" ><i class="iconfont icon-back"></i><i class="backParam">{{ this.$store.state.layoutLeftInfo }}</i></a>
 		</section>
 		<section class="func-center">
@@ -142,7 +142,7 @@
 		color: #108ee9;
 	}*/
 	.lightBlue{
-		font-size: 56px;
+		font-size: .746rem;
 		color: @fontColor1;
 	}
 	.title input{
